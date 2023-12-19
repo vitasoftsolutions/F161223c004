@@ -158,8 +158,12 @@ export const router = createBrowserRouter([
           </PrivetRoute>
         ),
       },
-      {
+  {
         path: "/login",
+        element: <Login_Page />,
+      },
+      {
+        path: "/login/:email/:password",
         element: <Login_Page />,
       },
       // {
