@@ -158,7 +158,7 @@ export const router = createBrowserRouter([
           </PrivetRoute>
         ),
       },
-  {
+      {
         path: "/login",
         element: <Login_Page />,
       },
