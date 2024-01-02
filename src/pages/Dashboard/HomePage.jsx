@@ -9,8 +9,8 @@ import { GiArcheryTarget } from "react-icons/gi";
 import { IoPieChartSharp } from "react-icons/io5";
 import { MdOutlineWifiTethering } from "react-icons/md";
 import { CiFaceSmile } from "react-icons/ci";
-import MyBarChart from "../../Components/shared/AllCharts/Chart_PaymentPerMonth";
 import Chart_MostDownloadedIndustry from "../../Components/shared/AllCharts/Chart_MostDownloadedIndustry";
+import Chart_PaymentPerMonth from "../../Components/shared/AllCharts/Chart_PaymentPerMonth";
 
 const top_cards = [
   {
@@ -19,8 +19,8 @@ const top_cards = [
     number: "123.40",
     footer_icons: <FaRegBookmark />,
     footer_text: "All erp users",
-    bg1: "#DB8282",
-    bg2: "#DDB249",
+    bg1: "#fff",
+    bg2: "#fff",
   },
   {
     icons: <GiArcheryTarget />,
@@ -28,8 +28,8 @@ const top_cards = [
     number: "123.40",
     footer_icons: <FaRegBookmark />,
     footer_text: "All erp users",
-    bg1: "#84AEC2",
-    bg2: "#6D53DC",
+    bg1: "#fff",
+    bg2: "#fff",
   },
   {
     icons: <FaMoneyBillTrendUp />,
@@ -37,8 +37,8 @@ const top_cards = [
     number: "123.40",
     footer_icons: <FaRegBookmark />,
     footer_text: "All erp users",
-    bg1: "#04616E",
-    bg2: "#B7D7C9",
+    bg1: "#fff",
+    bg2: "#fff",
   },
   {
     icons: <IoPieChartSharp />,
@@ -46,8 +46,8 @@ const top_cards = [
     number: "123.40",
     footer_icons: <FaRegBookmark />,
     footer_text: "All erp users",
-    bg1: "#DB8282",
-    bg2: "#E54D24",
+    bg1: "#fff",
+    bg2: "#fff",
   },
 ];
 
@@ -90,22 +90,22 @@ function HomePage() {
           {top_cards.map((cr, index) => (
             <div
               key={index}
-              className={`col-span-1 h-36 rounded-xl`}
+              className={`col-span-1 shadow-md h-36 rounded-md`}
               style={{
                 background: `linear-gradient(to right, ${cr.bg1}, ${cr.bg2})`,
               }}
             >
               <div className="flex border-b-2">
-                <div className="flex justify-center items-center text-white text-3xl bg-gray-300 h-14 w-14 ml-4 mt-4 bg-opacity-60 rounded-md">
+                <div className="flex justify-center items-center text-gray-700 text-3xl bg-gray-300 h-14 w-14 ml-4 mt-4 bg-opacity-60 rounded-md">
                   <div>{cr.icons}</div>
                 </div>
-                <div className="text-white m-4">
+                <div className="text-gray-700 m-4">
                   <p>{cr.content}</p>
                   <h3 className="text-xl font-bold">{cr.number}</h3>
                 </div>
               </div>
               {/* Footer */}
-              <div className="flex justify-center items-center gap-3 mt-4 text-white">
+              <div className="flex justify-center items-center gap-3 mt-4 text-gray-700">
                 <div className="flex items-center gap-3">
                   <span>{cr.footer_icons}</span>
                   <span>{cr.footer_text}</span>
@@ -123,8 +123,8 @@ function HomePage() {
             <h2 className="text-xl font-semibold text-center text-black border-b-2">
               Cost Per Month
             </h2>
-            <div>
-              <Chart_MostDownloadedIndustry />
+            <div className="pb-3" style={{ height: "100%", width: "100%" }}>
+              <Chart_PaymentPerMonth />
             </div>
           </div>
 
@@ -162,7 +162,7 @@ function HomePage() {
             className="md:col-span-2 shadow-xl shadow-blue-200 pb-8 pr-5"
             style={{ height: "380px", width: "100%" }}
           >
-            <MyBarChart />
+            <Chart_MostDownloadedIndustry />
           </div>
         </div>
       </div>
